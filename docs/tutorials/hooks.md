@@ -14,22 +14,6 @@ sidebar_label:
 
 :::
 
-## Introduction
-
-In [Part 4: Store](./part-4-store.md), we saw how to create a Redux store, dispatch actions, and read the current state. We also looked at how a store works inside, how enhancers and middleware let us customize the store with additional abilities, and how to add the Redux DevTools to let us see what's happening inside our app as actions are dispatched.
-
-In this section, we'll add a User Interface for our todo app. We'll see how Redux works with a UI layer overall, and we'll specifically cover how Redux works together with React.
-
-## Integrating Redux with a UI
-
-Redux is a standalone JS library. As we've already seen, you can create and use a Redux store even if you don't have a user interface set up. This also means that **you can use Redux with any UI framework** (or even without _any_ UI framework), and use it on both client and server. You can write Redux apps with React, Vue, Angular, Ember, jQuery, or vanilla JavaScript.
-
-That said, **Redux was specifically designed to work well with [React](https://reactjs.org)**. React lets you describe your UI as a function of your state, and Redux contains state and updates it in response to actions.
-
-Because of that, we'll use React for this tutorial as we build our todo app, and cover the basics of how to use React with Redux.
-
-Before we get to that part, let's take a quick look at how Redux interacts with a UI layer in general.
-
 ### Basic Redux and UI Integration
 
 Using Redux with any UI layer requires a few consistent steps:
