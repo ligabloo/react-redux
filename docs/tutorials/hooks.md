@@ -5,7 +5,7 @@ hide_title: true
 sidebar_label:
 ---
 
-# Redux Fundamentals, Part 5: UI and React
+# Tutorial: Using the `hooks` API
 
 :::tip What You'll Learn
 
