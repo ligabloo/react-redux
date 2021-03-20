@@ -4,7 +4,7 @@ module.exports = {
       'introduction/getting-started',
       'introduction/why-use-react-redux'
     ],
-    Tutorials: ['tutorials/connect'],
+    Tutorials: ['tutorials/hooks', 'tutorials/connect'],
     'Using React Redux': [
       'using-react-redux/usage-with-typescript',
       'using-react-redux/connect-mapstate',

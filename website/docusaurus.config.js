@@ -80,7 +80,7 @@ const siteConfig = {
           position: 'right'
         },
         {
-          to: 'tutorials/connect',
+          to: 'tutorials/hooks',
           label: 'Tutorial',
           position: 'right'
         },
