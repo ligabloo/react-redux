@@ -10,15 +10,26 @@ sidebar_label:
 :::tip What You'll Learn
 
 - How a Redux store works with a UI
-- How to use Redux with React
+- How to use Redux with React Hooks
 
 :::
 
 ## Introduction
 
-In [Part 4: Store](./part-4-store.md), we saw how to create a Redux store, dispatch actions, and read the current state. We also looked at how a store works inside, how enhancers and middleware let us customize the store with additional abilities, and how to add the Redux DevTools to let us see what's happening inside our app as actions are dispatched.
+This tutorial will cover the basics of creating a Redux store, connecting that store to React components, and dispatching actions back to that store, all using React `hooks`. This tutorial is designed to provide a primer for using React-Redux with `hooks` and shouldn't be thought of as comprehensive. 
 
-In this section, we'll add a User Interface for our todo app. We'll see how Redux works with a UI layer overall, and we'll specifically cover how Redux works together with React.
+For a deeper dive into the concepts discussed here, check the official [Redux Essentials](https://redux.js.org/tutorials/essentials/part-1-overview-concepts) tutorial.
+
+## How to Read This Tutorial
+
+This tutorial is designed to showcase what we consider the best approach to using Redux in a React project. We've tried to keep these explanations beginner-friendly, but we do need to make some assumptions about what you already know:
+
+:::important Prerequisites
+  - Familiarity with [HTML & CSS](https://internetingishard.com/).
+  - Familiarity with [ES6 syntax and features](https://www.taniarascia.com/es6-syntax-and-feature-overview/)
+  - Knowledge of React terminology: [JSX](https://reactjs.org/docs/introducing-jsx.html), [State](https://reactjs.org/docs/state-and-lifecycle.html), [Function Components, Props](https://reactjs.org/docs/components-and-props.html), and [Hooks](https://reactjs.org/docs/hooks-intro.html)
+  - Knowledge of [asynchronous JavaScript](https://javascript.info/promise-basics) and [making AJAX requests](https://javascript.info/fetch)
+:::
 
 ## Integrating Redux with a UI
 
@@ -42,8 +53,10 @@ Using Redux with any UI layer requires a few consistent steps:
    3. Update the UI with the data
 4. If necessary, render the UI with initial state
 5. Respond to UI inputs by dispatching Redux actions
-
-Let's go back to the [the counter app example we saw in Part 1](./part-1-overview.md) and see how it follows those steps:
+```js
+//CHANGE THE WORDING BELOW TO REFERENCE OTHER TUTORIAL DIFFERENTLY 
+```
+Let's go back to the [the counter app example we saw in Part 1](./part-1-overview.md) <-- DEAD LINK; NEEDS UPDATE and see how it follows those steps:
 
 ```js
 // 1) Create a new Redux store with the `createStore` function
