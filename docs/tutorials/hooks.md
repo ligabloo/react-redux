@@ -45,6 +45,7 @@ That said, **Redux was specifically designed to work well with [React](https://r
 
 Before we dig into our project, let's quickly review the high level steps for using Redux with a user interface. 
 
+
 Using Redux with any UI layer requires a few consistent steps:
 
 :::info Simple Redux Data Flow
