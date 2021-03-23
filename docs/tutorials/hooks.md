@@ -102,7 +102,7 @@ After importing the `configureStore()` method from RTK we can provide several co
 
 Thinking about your global state as individual "slices" of a larger whole is a great way to make state management more, well… manageable. 
 
-Each slice should correspond to a feature in your application and will hold that feature's state, actions needed for updates, as well as any "selector" functions that can be used at the component level to reference that state.
+Each slice should correspond to a feature in your application and will hold its state, actions creators for dispatching updates, as well as any [selectors](https://redux.js.org/tutorials/fundamentals/part-2-concepts-data-flow#selectors) that can be used at the component level to reference that state.
 
 `createSlice()` receives an object with three main configuration fields:
 - `name`: a string that will be used as the prefix for the actions that createSlice() will generate. This string will represent the `domain` in the `domain/eventListener` convention that createSlice() uses under the hood to dynamically generate "action types"
