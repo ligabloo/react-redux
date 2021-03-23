@@ -30,10 +30,10 @@ This tutorial is designed to showcase what we consider the best approach to usin
   - Knowledge of React terminology: [JSX](https://reactjs.org/docs/introducing-jsx.html), [State](https://reactjs.org/docs/state-and-lifecycle.html), [Function Components, Props](https://reactjs.org/docs/components-and-props.html), and [Hooks](https://reactjs.org/docs/hooks-intro.html)
 :::
 
-This tutorial, in an attempt to showcase what we think are React Redux best practices, makes use of [Redux Toolkit](https://github.com/reduxjs/redux-toolkit), which is intended to be the standard way to write Redux logic.  
+This tutorial, in an attempt to showcase what we think are React Redux best practices, makes use of [Redux Toolkit](https://github.com/reduxjs/redux-toolkit) (RTK), which is intended to be the standard way to write Redux logic.  
 
 :::tip
-To learn more about using React Redux without Redux Toolkit, please visit the [Redux Fundamentals](https://redux.js.org/tutorials/fundamentals/part-1-overview) tutorial.
+To learn more about using React Redux without RTK, please visit the [Redux Fundamentals](https://redux.js.org/tutorials/fundamentals/part-1-overview) tutorial.
 :::
 ## Redux - The Basics
 
@@ -81,7 +81,7 @@ The first step to in any Redux project is creating your [Store](https://redux.js
 To begin, in the `/src` directory of your project create a `store.js` file. This is where we will define our Redux store. 
 
 :::important `configureStore()` 
-Using the React Toolkit `configureStore()` method allows us to quickly setup a Redux store while also providing an improved developer experience versus the default `createStore()` method.  
+Using the RTK `configureStore()` method allows us to quickly setup a Redux store while also providing an improved developer experience versus the default `createStore()` method.  
 :::
 
 ```js
@@ -96,7 +96,7 @@ const store = configureStore({
 export default store;
 ```
 
-After importing the `configureStore()` method from React Toolkit we can provide several configuration objects to help define our Redux store. The first, and most important for our purposes, is the `reducer` object. Once we define some [Reducer](https://redux.js.org/understanding/thinking-in-redux/glossary#reducer) functions, we will add them as fields here.
+After importing the `configureStore()` method from RTK we can provide several configuration objects to help define our Redux store. The first, and most important for our purposes, is the `reducer` object. Once we define some [Reducer](https://redux.js.org/understanding/thinking-in-redux/glossary#reducer) functions, we will add them as fields here.
 
 ### Creating a `slice`
 
