@@ -5,7 +5,7 @@ hide_title: true
 sidebar_label:
 ---
 
-# Tutorial: Using the `hooks` API
+# Tutorial: Using the Hooks API
 
 :::tip What You'll Learn
 
@@ -16,7 +16,7 @@ sidebar_label:
 
 ## Introduction
 
-This tutorial will cover the basics of creating a Redux store, connecting that store to React components, and dispatching actions back to that store, all using React `hooks`. This tutorial is designed to provide a primer for using React-Redux with `hooks` and shouldn't be thought of as comprehensive. 
+This tutorial will cover the basics of creating a Redux store, connecting that store to React components, and dispatching actions back to that store, all using [React Hooks](https://reactjs.org/docs/hooks-intro.html). This tutorial is designed to provide a primer for using React Redux with Hooks and shouldn't be thought of as comprehensive. 
 
 For a deeper dive into the concepts discussed here, check the official [Redux Essentials](https://redux.js.org/tutorials/essentials/part-1-overview-concepts) tutorial.
 
@@ -30,10 +30,10 @@ This tutorial is designed to showcase what we consider the best approach to usin
   - Knowledge of React terminology: [JSX](https://reactjs.org/docs/introducing-jsx.html), [State](https://reactjs.org/docs/state-and-lifecycle.html), [Function Components, Props](https://reactjs.org/docs/components-and-props.html), and [Hooks](https://reactjs.org/docs/hooks-intro.html)
 :::
 
-This tutorial, in an attempt to showcase what we think are React-Redux best practices, makes use of [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)(RTX), which is intended to be the standard way to write Redux logic.  
+This tutorial, in an attempt to showcase what we think are React Redux best practices, makes use of [Redux Toolkit](https://github.com/reduxjs/redux-toolkit), which is intended to be the standard way to write Redux logic.  
 
 :::tip
-To learn more about using React-Redux without RTX, please visit the [Redux Fundamentals](https://redux.js.org/tutorials/fundamentals/part-1-overview) tutorial.
+To learn more about using React Redux without Redux Toolkit, please visit the [Redux Fundamentals](https://redux.js.org/tutorials/fundamentals/part-1-overview) tutorial.
 :::
 ## Redux - The Basics
 
@@ -61,27 +61,27 @@ Using Redux with any UI layer requires a few consistent steps:
 
 This tutorial attempts to follow those basics steps as an outline.
 ## Project Overview
-Before we start writing our code, let's define the requirements for our application. In this tutorial we are building a basic `ToDo` list manager. 
+Before we start writing our code, let's define the requirements for our application. In this tutorial we are building a basic Todo List manager. 
 
-:::info ToDo List Requirements
-  - Users should be able to input a new `ToDo` item 
-  - `ToDo` items should be displayed as a list
-  - Users should be able to toggle a `ToDo` items between a `Completed` and `Not Completed` state
-  - Users should be able to filter which `ToDo` items they see, showing both completed and incomplete tasks as well as `all` tasks, regardless of status
+:::info Todo List Requirements
+  - Users should be able to input a new Todo item 
+  - Todo items should be displayed as a list
+  - Users should be able to toggle a Todo items between a `Completed` and `Not Completed` state
+  - Users should be able to filter which Todo items they see, showing both completed and incomplete tasks as well as `all` tasks, regardless of status
 :::
 
 ### Setting Up Your Local Project
-Please `fork` the [Stater Template](./needs-link.md) on CodeSandbox. For the completed tutorial code, please see the end of the tutorial. 
+If you want to follow along with the tutorial, please fork the [Stater Template](./needs-link.md) on CodeSandbox. For the completed tutorial code, please see the end of the tutorial.
 
 ## Todo List Application
 
 ### Creating Your Redux Store 
-The first step to in any Redux project is creating your [Store](https://redux.js.org/api/store). The Redux Store is a JavaScript object that that holds our applications [State](https://redux.js.org/understanding/thinking-in-redux/glossary#state).
+The first step to in any Redux project is creating your [Store](https://redux.js.org/api/store). The Redux Store is a JavaScript object that holds our applications' [State](https://redux.js.org/understanding/thinking-in-redux/glossary#state).
 
-To begin, in the `src` directory of your project create a `store.js` file. This is where we will define our Redux store. 
+To begin, in the `/src` directory of your project create a `store.js` file. This is where we will define our Redux store. 
 
 :::important `configureStore()` 
-Using the RTX `configureStore()` method allows us to quickly setup a Redux store while also providing an improved developer experience versus the default `createStore()` method.  
+Using the React Toolkit `configureStore()` method allows us to quickly setup a Redux store while also providing an improved developer experience versus the default `createStore()` method.  
 :::
 
 ```js
@@ -95,16 +95,17 @@ const store = configureStore({
 
 export default store;
 ```
-After importing the `configureStore()` method from RTX we can provide several configuration objects to help define out Redux store. The first, and most important for our purposes, is the `reducer` object. Once we define some [Reducer](https://redux.js.org/understanding/thinking-in-redux/glossary#reducer) functions, we will add them as fields here.
+
+After importing the `configureStore()` method from React Toolkit we can provide several configuration objects to help define our Redux store. The first, and most important for our purposes, is the `reducer` object. Once we define some [Reducer](https://redux.js.org/understanding/thinking-in-redux/glossary#reducer) functions, we will add them as fields here.
 
 ### Creating a `slice`
 
-Thinking about your global state as individual `slices` of a larger whole is a great way to make state management more, well... manageable. 
+Thinking about your global state as individual "slices" of a larger whole is a great way to make state management more, well… manageable. 
 
-Each `slice` should correspond to a feature in your application and will hold that feature's state, as well as any actions needed for updates, as well as any `selector` statements that can be used at the component level to reference that state.
+Each slice should correspond to a feature in your application and will hold that feature's state, actions needed for updates, as well as any "selector" functions that can be used at the component level to reference that state.
 
 `createSlice()` receives an object with three main configuration fields:
-- `name`: a string that will be used as the prefix for the actions that createSlice() will generate. This string will represent the `domain` in the `domain/eventListener` convention that createSlice() uses under the hood to dynamically generate `action types`
+- `name`: a string that will be used as the prefix for the actions that createSlice() will generate. This string will represent the `domain` in the `domain/eventListener` convention that createSlice() uses under the hood to dynamically generate "action types"
 - `initialState`: representing the starting state of the reducer
 - `reducers`: an object comprised of `reducer` functions that update global state
 
