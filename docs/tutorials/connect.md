@@ -9,7 +9,7 @@ sidebar_label:
 
 :::tip
 
-We now recommend using [the React-Redux hooks API as the default](../api/hooks.md). However, the `connect` API still works fine.
+We now recommend using [the React-Redux hooks API as the default](../api/hooks). However, the `connect` API still works fine.
 
 This tutorial also shows some older practices we no longer recommend, like separating Redux logic into folders by type. We've kept this tutorial as-is for completeness, but recommend reading through [the "Redux Essentials" tutorial](https://redux.js.org/tutorials/essentials/part-1-overview-concepts) and the [Redux Style Guide](https://redux.js.org/style-guide/style-guide) in the Redux docs for our current best practices.
 
