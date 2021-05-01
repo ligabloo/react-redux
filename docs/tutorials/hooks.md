@@ -31,7 +31,7 @@ This tutorial is designed to showcase what we consider best practices for implem
 - Knowledge of React terminology: [JSX](https://reactjs.org/docs/introducing-jsx.html), [State](https://reactjs.org/docs/state-and-lifecycle.html), [Function Components, Props](https://reactjs.org/docs/components-and-props.html), and [Hooks](https://reactjs.org/docs/hooks-intro.html)
 :::
 
-To meet our goal of showcasing Redux best practice, this tutorial makes use of [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)(RTK). Although its totally possible to implement Redux without RTK we think its the best way to write Redux logic.
+To meet our goal of showcasing Redux best practices, this tutorial makes use of [Redux Toolkit](https://github.com/reduxjs/redux-toolkit)(RTK). Although it's totally possible to implement Redux without RTK we think its the best way to write Redux logic.
 
 :::tip
 To learn more about using React Redux without RTK, please visit the [Redux Fundamentals](https://redux.js.org/tutorials/fundamentals/part-1-overview) tutorial.
